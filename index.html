@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onde Descartar?</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Adicione os links para os arquivos CSS e JS do Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        /* Adicione um espaço no topo do título */
+        h1 {
+            margin-top: 100px;
+	        margin-bottom: 100px;
+        }
+        .btn img {
+            width: 100px;
+            height: 100px;
+        }
+	footer {
+            background-color: #333;
+            color: #fff;
+	    text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container text-center">
+        <!-- Ícone de Recycle com link para a página inicial -->
+        <a href="index.html" class="text-decoration-none">
+            <h1><i class="fas fa-recycle"></i> Onde Descartar?</h1>
+        </a>
+    </div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-6 col-md-4">
+            <select class="form-control mb-2" id="residuos">
+                <option value="">Resíduos</option>
+		<option value="Coleta Seletiva">Coleta Seletiva</option>
+                <option value="Itens Eletronicos">Itens Eletronicos</option>
+                <option value="Lampadas Fluorescente">Lampadas Fluorescente</option>
+                <option value="Pilha">Pilhas & Baterias</option>
+                <option value="Remédios">Remédios</option>
+                <option value="Vidro">Vidro</option>
+            </select>
+        </div>
+        <div class="col-6 col-md-4">
+            <select class="form-control mb-2" id="cidades">
+                <option value="">Cidades</option>
+                <option value="Santos">Santos</option>
+            </select>
+        </div>
+        <div class="col-6 col-md-4 d-flex justify-content-center">
+            <button class="btn btn-primary" id="pesquisar">
+                <i class="fas fa-search"></i> Pesquisar
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4" style="margin-top: 100px; margin-bottom: 100px;">
+    <div class="row">
+        <div class="col-md-4">
+	    <a button class="btn btn-primary btn-block" href="coletaseletiva.html">
+                <img src="img/reciclagem.png" alt="Coleta Seletiva" class="img-fluid">
+                Coleta Seletiva
+            </button>
+	</a>
+        </div>
+        <div class="col-md-4">
+	    <a button class="btn btn-success btn-block" href="metal.html">
+                <img src="img/metal.png" alt="Metal" class="img-fluid">
+                Metal
+            </button>
+	</a>
+        </div>
+        <div class="col-md-4">
+	    <a button class="btn btn-danger btn-block" href="papel.html">
+                <img src="img/papel.png" alt="Papel" class="img-fluid">
+                Papel
+            </button>
+	</a>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-4">
+            <a button class="btn btn-warning btn-block" href="plastico.html">
+                <img src="img/plastico.png" alt="Plástico" class="img-fluid">
+                Plástico
+            </button>
+	</a>
+        </div>
+        <div class="col-md-4">
+            <a button class="btn btn-info btn-block" href="vidro.html">
+                <img src="img/vidro.png" alt="Vidro" class="img-fluid">
+                Vidro
+            </button>
+        </a>
+        </div>
+        <div class="col-md-4">
+            <a button class="btn btn-secondary btn-block" href="eletronicos.html">
+                <img src="img/eletronicos.png" alt="Eletrônicos" class="img-fluid">
+                Eletrônicos
+            </button>
+	</a>
+        </div>
+    </div>
+</div>
+
+<footer class="fixed-bottom text-center">
+    <p>&copy; 2023 Onde Descartar? | Desenvolvido por Lucas Frenhan & Melissa Oliveira & Carlos Henrique</p>
+</footer>
+
+<!-- Adicione os links para os arquivos JS do Bootstrap e jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.getElementById("pesquisar").addEventListener("click", function() {
+        var residuo = document.getElementById("residuos").value;
+        var cidade = document.getElementById("cidades").value;
+
+        if (residuo === "" || cidade === "") {
+            alert("Por favor, selecione um tipo de resíduo e / ou uma cidade válida.");
+        } else if (residuo === "Coleta Seletiva" && cidade === "Santos") {
+            window.location.href = "coletaseletiva_santos.html";
+        } else if (residuo === "Lampadas Fluorescente" && cidade === "Santos") {
+            window.location.href = "lampadasfluorescente_santos.html";
+        } else if (residuo === "Remédios" && cidade === "Santos") {
+            window.location.href = "remedios_santos.html";
+        } else if (residuo === "Vidro" && cidade === "Santos") {
+            window.location.href = "vidro_santos.html";
+        } else if (residuo === "Pilha" && cidade === "Santos") {
+            window.location.href = "pilha_santos.html";
+        } else if (residuo === "Itens Eletronicos" && cidade === "Santos") {
+            window.location.href = "itenseletronicos_santos.html";
+        }
+        // Adicione mais casos conforme necessário
+    });
+</script>
+</body>
+</html>
